@@ -1,0 +1,17 @@
+.header {
+    height: 7dvh;
+    padding: 0 20px;
+    background-color: #fbfdfb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .logo {
+        height: 7dvh;
+        display: block;
+        color: #1b4b86;
+        :deep(svg) {
+            width: 50dvw;
+            height: 7dvh !important;
+        }
+    }
+}

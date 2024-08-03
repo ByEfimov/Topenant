@@ -1,0 +1,39 @@
+.company {
+    .header {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #1b4b86;
+        .image {
+            min-width: 15dvw;
+            aspect-ratio: 1;
+            max-width: 15dvw;
+            min-height: 15dvw;
+            border-radius: 10px;
+            overflow: hidden;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            max-height: 15dvw;
+            img {
+                height: 100%;
+
+                width: 100%;
+            }
+        }
+        .title {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            font-size: 20px;
+            color: #1b4b86;
+            font-weight: 600;
+            margin: 0 auto;
+        }
+    }
+    .works {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+}

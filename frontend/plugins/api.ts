@@ -4,19 +4,23 @@ export default defineNuxtPlugin(() => {
     if (process.server) {
         return;
     }
-    const $api = $fetch.create({
-        baseURL: config.public.apiUrl,
-        timeout: 15000,
-        headers: {
-            Authorization: localStorage.getItem('tokens')
-                ? `Bearer ${JSON.parse(localStorage.getItem('tokens') || '').access}`
-                : '',
-        },
-    });
+    try {
+        const $api = $fetch.create({
+            baseURL: config.public.apiUrl,
+            timeout: 15000,
+            headers: {
+                Authorization: localStorage.getItem('tokens')
+                    ? `Bearer ${JSON.parse(localStorage.getItem('tokens') || '').access}`
+                    : '',
+            },
+        });
 
-    return {
-        provide: {
-            api: $api,
-        },
-    };
+        return {
+            provide: {
+                api: $api,
+            },
+        };
+    } catch (e) {
+        console.error(e);
+    }
 });

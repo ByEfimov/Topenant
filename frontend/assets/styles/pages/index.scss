@@ -1,0 +1,10 @@
+.content {
+    padding: 0 20px;
+    padding-top: 8dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    .centerText {
+        text-align: center;
+    }
+}
