@@ -5,12 +5,13 @@ from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
 
-from company.views import CompanyListView, WorksListView
+from company.views import CompanyListView, TicketView, WorksListView
 
 
 router = DefaultRouter()
 router.register("company", CompanyListView)
 router.register("works", WorksListView)
+router.register("tickets", TicketView)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

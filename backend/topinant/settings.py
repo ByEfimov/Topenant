@@ -170,8 +170,8 @@ DJOSER = {
     # "LOGOUT_ON_PASSWORD_CHANGE": False,  # Default
     "SERIALIZERS": {
         # "user_create": "user.serializer.UserRegistrationSerializer",  # custom serializer
-        # "user": "accounts.serializers.UserMeSetializer",  # custom serializer
-        # "current_user": "accounts.serializers.UserMeSetializer",  # custom serializer
+        "user": "user.serializers.userMeSerializer",  # custom serializer
+        "current_user": "user.serializers.userMeSerializer",  # custom serializer
         # "user_delete": "user.serializer.UserMeSetializer",  # custom serializer
     },
     # "EMAIL": {

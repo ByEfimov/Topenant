@@ -33,6 +33,7 @@ class BaseUser(AbstractUser):
     email = models.EmailField(verbose_name="Электронная почта", unique=True)
     role = models.CharField(verbose_name="Роль", max_length=255, choices=UserRoleChoices.choices)
     name = models.CharField("Имя", max_length=50, blank=True, null=True)
+    points = models.IntegerField(default=0)
 
     phone_number = models.CharField(verbose_name="Номер телефона", max_length=255, blank=True, null=True)
 

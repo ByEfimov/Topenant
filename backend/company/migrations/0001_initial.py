@@ -38,4 +38,13 @@ class Migration(migrations.Migration):
                 ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='works', to='company.company', verbose_name='Компания')),
             ],
         ),
+        migrations.CreateModel(
+            name='Ticket',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('status', models.CharField(choices=[('rejected', 'Отклонено'), ('waiting', 'Ожидание'), ('approved', 'Принят')], default='waiting', max_length=15, verbose_name='Статус')),
+                ('applicant', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tickets', to=settings.AUTH_USER_MODEL, verbose_name='Работник')),
+                ('work', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tickets', to='company.works', verbose_name='Вакансия')),
+            ],
+        ),
     ]
