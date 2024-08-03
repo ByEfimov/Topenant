@@ -9,7 +9,7 @@ WORKDIR /src
 # Build
 FROM base as build
 
-COPY --link package.json yarn.lock .yarnrc.yml ./
+COPY --link package.json yarn.lock ./
 
 RUN yarn install
 
