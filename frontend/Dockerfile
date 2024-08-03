@@ -1,6 +1,6 @@
 ARG NODE_VERSION=18.17.0
 
-FROM node:${NODE_VERSION}-slim as base
+FROM node:18.17.0-slim as base
 
 ARG PORT=3000
 
@@ -10,7 +10,6 @@ WORKDIR /src
 FROM base as build
 
 COPY --link package.json yarn.lock .yarnrc.yml ./
-COPY .yarn ./.yarn
 
 RUN yarn install
 
@@ -21,7 +20,7 @@ RUN yarn build
 # Run
 FROM base
 
-ENV PORT=$PORT
+ENV PORT=8080
 
 COPY --from=build /src/.output /src/.output
 # Optional, only needed if you rely on unbundled dependencies
