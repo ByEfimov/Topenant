@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  topinant-backend:
+    container_name: topinant-backend
+    build: ./
+    ports:
+      - "8000:8000"
+    restart: always
+    entrypoint: /entrypoint.sh
+    volumes:
+      - ./:/topinant-backend
+      - static_volume:/topinant-backend/staticfiles
+      - media_volume:/topinant-backend/media
+
+volumes:
+  static_volume:
+  media_volume:
